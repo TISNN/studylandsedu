@@ -59,9 +59,19 @@
     
                     <!-- Toggler -->
     
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
                     </button>
+                    
+                    <!-- Dropdown Menu (hidden by default) -->
+                    <div class="navbar-dropdown" style="display: none;">
+                        <ul class="navbar-dropdown-menu">
+                            <li><a href="index.html">主页</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="mentor.html">导师团队</a></li>
+                            <li><a href="contract.html">联系我们</a></li>
+                        </ul>
+                    </div>
     
                     <!-- Collapse -->
                     <div class="collapse navbar-collapse" id="navbarMenu">
@@ -225,55 +235,52 @@
                     </div>
                 </div>
             </div>
-           
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-1">
+                    <div class="single-course-category cat-1 bg-study-abroad">
                         <h4><a href="#"> 留学申请 </a> </h4>
                         <p>本科、硕士、博士</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-2">
+                    <div class="single-course-category cat-2 bg-international-exam">
                         <h4><a href="#">国际标化</a></h4>
                         <p>A-Level/IGCSE/IB/AP</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-3">
+                    <div class="single-course-category cat-3 bg-language-training">
                         <h4><a href="#">语言培训</a></h4>
                         <p>IELTS/TOEFL/GRE/GMAT/小语种</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-4">
+                    <div class="single-course-category cat-4 bg-academic-support">
                         <h4><a href="#">课业辅导</a></h4>
                         <p>Thesis/Essay/Assignment/Code</p>
                     </div>
                 </div>
-
-               
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-1">
+                    <div class="single-course-category cat-1 bg-profile-enhancement">
                         <h4><a href="#">背景提升</a></h4>
                         <p>科研/竞赛/实习</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-2">
+                    <div class="single-course-category cat-2 bg-career-planning">
                         <h4><a href="#">求职规划</a></h4>
                         <p>国内、海外求职培训</p>
                     </div>
                 </div>
                
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-3">
+                    <div class="single-course-category cat-3 bg-visa-accommodation">
                         <h4><a href="#">签证住宿</a></h4>
                         <p>学习旅游签证/住宿办理</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single-course-category cat-4">
+                    <div class="single-course-category cat-4 bg-overseas-study">
                         <h4><a href="#">海外游学</a></h4>
                         <p>高含金量游学项目、交换计划 </p>
                     </div>
@@ -299,7 +306,7 @@
                 <div class="section-heading ">
                     <span class="subheading">Comprehensive study abroad services</span>
                     <h3>全方位留学申请 <span> Expert solution</span></h3>
-                    <p>学屿教育致力于提供“常规院校申请”和“高端背景提升”的全方位申请，专注于全球多个国家的一站式留学服务。</p>
+                    <p>学屿教育致力于提供"常规院校申请"和"高端背景提升"的全方位申请，专注于全球多个国家的一站式留学服务。</p>
                 </div>
 
                 <div class="about-text-block">
@@ -311,7 +318,6 @@
                         <p>我们提供高升本、本升硕、硕升博、专升本、专升硕等多种升学路径。</p>
                     </div>
                 </div>
-
                 <div class="about-text-block">
                     <div class="icon-box">
                         <i class="flaticon-flag"></i>
@@ -321,7 +327,6 @@
                         <p>我们拥有众多知名院校的官方授权资质，确保每位学生顺利录取。</p>
                     </div>
                 </div>
-
                 <div class="about-text-block">
                     <div class="icon-box border-none">
                         <i class="flaticon-flag"></i>
@@ -332,7 +337,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-xl-6 col-lg-6">
                 <div class="about-img">
                     <img src="assets/images/bg/about.jpg" alt="" class="img-fluid">
@@ -356,38 +360,33 @@
             </div>
         </div>
 
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-flag"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                     <div class="feature-text">
                         <h4>ThreeToOne 申请服务</h4>
-                        <p>我们采⽤“选校顾问+专业导师+申请导师”三对⼀的全程跟踪服务，由三位海外留学经历的导师亲力亲为，分工明确、高品质、高效率、精准、专业地辅导学生申请海外留学项目。
-
-                            
-                            <br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-             <div class="col-lg-4 col-md-6 col-xl-4">
-                <div class="feature-item feature-style-2">
-                    <div class="feature-icon">
-                        <i class="flaticon-layers"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h4>最懂你的申请导师</h4>
-                        <p>我们为每位学员匹配来自申请Dream School或学科领域的学长学姐，确保每个学员都能得到最精准的指导。<p>
-                        </p>
+                        <p>我们采⽤"选校顾问+专业导师+申请导师"三对⼀的全程跟踪服务，由三位海外留学经历的导师亲力亲为，分工明确、高品质、高效率、精准、专业地辅导学生申请海外留学项目。</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-video-camera"></i>
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>最懂你的申请导师</h4>
+                        <p>我们为每位学员匹配来自申请Dream School或学科领域的学长学姐，确保每个学员都能得到最精准的指导。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-4">
+                <div class="feature-item feature-style-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
                     </div>
                     <div class="feature-text">
                         <h4>丰富资源和学术网络</h4>
@@ -398,7 +397,7 @@
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-video-camera"></i>
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
                     <div class="feature-text">
                         <h4>非申请季专属规划</h4>
@@ -409,7 +408,7 @@
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-layers"></i>
+                        <i class="fas fa-pencil-alt"></i>
                     </div>
                     <div class="feature-text">
                         <h4>定制化文书</h4>
@@ -417,16 +416,10 @@
                     </div>
                 </div>
             </div>
-            
- 
-
-
- 
-
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-video-camera"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="feature-text">
                         <h4>个性化背景提升</h4>
@@ -434,24 +427,21 @@
                     </div>
                 </div>
             </div>
- 
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-video-camera"></i>
+                        <i class="fas fa-database"></i>
                     </div>
                     <div class="feature-text">
                         <h4>申请案例数据库</h4>
-                        <p>我们利用过往成功案例数据和大数据分析，为学生提供申请概率评估。通过对历史数据的分析，帮助学生了解不同院校和专业的申请成功率，以制定更具针对性的申请策略。
-                        </p>
+                        <p>我们利用过往成功案例数据和大数据分析，为学生提供申请概率评估。通过对历史数据的分析，帮助学生了解不同院校和专业的申请成功率，以制定更具针对性的申请策略。</p>
                     </div>
                 </div>
             </div>
-        
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-help"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="feature-text">
                         <h4>申请透明和退费保障</h4>
@@ -462,7 +452,7 @@
             <div class="col-lg-4 col-md-6 col-xl-4">
                 <div class="feature-item feature-style-2">
                     <div class="feature-icon">
-                        <i class="flaticon-video-camera"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
                     <div class="feature-text">
                         <h4>全程温暖相伴</h4>
@@ -470,7 +460,8 @@
                     </div>
                 </div>
             </div>  
-    
+        </div>
+    </div>
 </section>
 <!-- 我们的优势 End -->
 
@@ -481,7 +472,7 @@
             <div class="col-lg-6 col-xl-5 me-auto">
                 <div class="section-heading">
                     <span class="subheading">FIND YOUR MENTOR</span>
-                    <h4>“因为自己淋过雨，所以想为你撑把伞”</h4>
+                    <h4>因为自己淋过雨，所以想为你撑把伞</h4>
                 </br>
                     <p>作为国际教育的受益者，我们希望将个人独特的海外留学经验分享给大家。我们能做到感学生所感，知学生所需，因为我们也曾面对未来的迷茫，经历过相似的困惑与挑战。因此，我们不仅能为你提供专业的指导，还能给予情感上的支持和鼓励。</p>
                    <p> 在传递我们的留学故事的同时，我们也希望你们的故事能够被传递下去。 </p>
@@ -539,7 +530,7 @@
                     <div class="testimonial-item testimonial-style-2">
                         <i class="fa fa-quote-right"></i>
                         <div class="testimonial-info-title">
-                            <h4>伦敦第一“申请”</h4>
+                            <h4>伦敦第一"申请"</h4>
                         </div>
                         
 
@@ -1024,7 +1015,9 @@
 <section class="offer-showcase section-padding">
     <div class="container">
         <div class="row">
-            <div class="offer-gallery">
+            <div class="offer-gallery-wrapper">
+                <!-- <button class="arrow prev-arrow">&lt;</button> -->
+                <div class="offer-gallery">
                 <div class="offer-item">
                     <img src="/assets/images/offer/3.png" alt="Offer 1" class="img-fluid">
                 </div>
@@ -1133,7 +1126,8 @@
                 <div class="offer-item">
                     <img src="/assets/images/offer/44.png" alt="Offer 6" class="img-fluid">
                 </div>
-            
+            </div>
+            <button class="arrow next-arrow">&gt;</button>
                 <!-- Add more offer-item divs as needed -->
             </div>
         </div>
@@ -1230,7 +1224,10 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xl-6 col-lg-6">
 					<div class="copyright text-lg-start text-center">
-						<p>© Copyright StudyLandsEdu All rights reserved.</a> </p>
+                        <p>
+                            <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2024091674号</a>
+                        </p>
+						<p>Copyright © 2024 StudyLandsEdu All Rights Reserved. 学屿教育版权所有</a> </p>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6">

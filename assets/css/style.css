@@ -3913,31 +3913,54 @@ Recent post widget
 }
 
 
-.offer-showcase {
-    padding: 60px 0;
-    background-color: #f4f4f4; /* Example background color, adjust as needed */
+.offer-gallery-wrapper {
+  position: relative;
+  overflow: hidden;
 }
+
 .offer-gallery {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping to multiple lines */
-  gap: 15px; /* Space between images */
-  justify-content: space-between; /* Distribute space evenly */
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.offer-gallery::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .offer-item {
-  flex: 1 0 15%; /* Allow each item to take up 15% of the row's width */
-  max-width: 15%; /* Maximum width for each item */
-  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 300px; /* 调整宽度以适应您的需求 */
+  margin-right: 20px;
 }
 
 .offer-item img {
   width: 100%;
   height: auto;
-  display: block;
-  border: 2px solid #ddd;
-  border-radius: 8px;
 }
 
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
 
 .timeline {
   width: 100%;

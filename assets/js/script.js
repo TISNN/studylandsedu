@@ -3,6 +3,26 @@
 (function ($) {
   "use strict";
 
+  $(document).ready(function() {
+    const gallery = $('.offer-gallery');
+    const wrapper = $('.offer-gallery-wrapper');
+  
+    wrapper.append('<button class="arrow prev-arrow">&lt;</button>');
+    wrapper.append('<button class="arrow next-arrow">&gt;</button>');
+  
+    const prevArrow = $('.prev-arrow');
+    const nextArrow = $('.next-arrow');
+  
+    prevArrow.on('click', function() {
+      gallery[0].scrollLeft -= 300; // 使用原生 DOM 方法
+    });
+  
+    nextArrow.on('click', function() {
+      gallery[0].scrollLeft += 300; // 使用原生 DOM 方法
+    });
+  });
+
+  
   $(window).scroll(function () {
     var window_top = $(window).scrollTop() + 1;
 
@@ -190,8 +210,14 @@
 
   // 你的现有代码...
 
+//   $('.navbar-toggler').on('click', function() {
+//     window.location.href = 'contact.html'; // 替换为您想要跳转的页面
+// });
+
   // 弹窗功能代码
   var contactButtons = document.querySelectorAll('.contact-button');
+  
+
 
   contactButtons.forEach(function(button) {
       button.addEventListener('click', function() {
