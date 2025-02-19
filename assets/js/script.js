@@ -7,9 +7,6 @@
     const gallery = $('.offer-gallery');
     const wrapper = $('.offer-gallery-wrapper');
   
-    wrapper.append('<button class="arrow prev-arrow">&lt;</button>');
-    wrapper.append('<button class="arrow next-arrow">&gt;</button>');
-  
     const prevArrow = $('.prev-arrow');
     const nextArrow = $('.next-arrow');
   
@@ -240,5 +237,32 @@
     }
 }
 
+// 导航菜单切换功能
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+        });
+
+        // 点击菜单项后自动关闭菜单
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarCollapse.classList.remove('show');
+            });
+        });
+
+        // 点击页面其他区域关闭菜单
+        document.addEventListener('click', function(event) {
+            const isClickInside = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
+            if (!isClickInside && navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    }
+});
 
 })(jQuery);

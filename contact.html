@@ -2,11 +2,15 @@
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Education LMS template by Dreambuzz">
-  <meta name="keywords" content="Eduhash,education,lms,seo,course,online,learning,caoch,training,tutor">
-  <meta name="author" content="themeturn.com">
+  <meta name="description" content="学屿教育StudyLandsEdu">
+  <meta name="keywords" content="StudyLandsEdu,学屿教育,education">
+  <meta name="author" content="studylandsedu.com">
 
-  <title>Eduhash - Education LMS template</title>
+  <title>学屿教育-联系我们</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/jpeg" href="assets/images/学屿logo.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/images/学屿logo.jpg">
 
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,16 +52,6 @@
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav mx-auto">
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                主页<i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="index.html">
-                                    Home 1
-                                </a> 
-                            </div>
-                        </li> -->
                         <li class="nav-item ">
                             <a href="index.html" class="nav-link js-scroll-trigger">
                                 主页
@@ -69,68 +63,26 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="about.html" class="nav-link js-scroll-trigger">
+                            <a href="mentor.html" class="nav-link js-scroll-trigger">
                                 导师团队
                             </a>
                         </li>
 
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                服务项目<i class="fa fa-angle-down"></i>
+                        <li class="nav-item">
+                            <a href="internship.html" class="nav-link">
+                                实习机会
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="course-grid.html">
-                                    Course Style 1
-                                </a>
-                                <a class="dropdown-item " href="course-grid-2.html">
-                                    Course Style 2
-                                </a> 
+                        </li>
 
-                                <a class="dropdown-item " href="course-grid-3.html">
-                                    Course Style 3
-                                </a> 
-                                <a class="dropdown-item " href="course-grid-4.html">
-                                    Course Style 4
-                                </a> 
-                                 <a class="dropdown-item " href="course-single.html">
-                                    Course Details Style 1
-                                </a> 
-                                <a class="dropdown-item " href="course-single2.html">
-                                    Course Details Style 2
-                                </a> 
-                            </div>
-                        </li> -->
-
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                留学故事<i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="blog.html">
-                                    Blog
-                                </a>
-                                <a class="dropdown-item " href="blog-single.html">
-                                    Blog Single
-                                </a> 
-                            </div>
-                        </li> -->
-                        
-                        <!-- <li class="nav-item ">
-                            <a href="blog-single.html" class="nav-link js-scroll-trigger">
-                                留学故事
-                            </a>
-                        </li> -->
-
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a href="contact.html" class="nav-link">
                                 联系我们
                             </a>
                         </li>
                     </ul>
-<!--                     
-                    <div class="header-login">
+                    
+                    <!-- <div class="header-login">
                         <a href="#" class="btn btn-solid-border btn-sm ">Log In</a>
-                        <a href="#" class="btn btn-main btn-sm">sign up</a>
                     </div> -->
                 </div> <!-- / .navbar-collapse -->
             </div> <!-- / .container -->
@@ -216,8 +168,8 @@
                         <div class="contact-item">
                             <p>办公地址</p>
                             <h4>上海市徐汇区徐家汇中心3期A栋<br>
-                                珠海市横琴新区横琴国际商务中心南塔8层<br>
-                                重庆市渝北区创意公园18栋2单元3-1<br>
+                                珠海市横琴新区环岛东路南方三一总部大厦18楼<br>
+                                重庆市渝中区民族路188号华润广场B座<br>
                                  </h4>
                         </div>
                
@@ -273,9 +225,170 @@
 
 <!-- Contact section End -->
 
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
     <img src="assets/images/map.jpeg" height="500" width="800" alt="" class="img-fluid">
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- 高德地图容器 -->
+            <div id="map-container" style="height: 500px; margin-bottom: 50px;"></div>
+        </div>
+    </div>
 </div>
+
+<!-- 引入高德地图 JavaScript API -->
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        serviceHost: 'http://localhost/_AMapService'  // 修改为本地地址
+    }
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=069054c71f549496597ba904d2e0b7e7&plugin=AMap.Scale,AMap.ToolBar,AMap.HawkEye,AMap.MapType"></script>
+
+<script>
+    // 等待地图API加载完成
+    window.onload = function() {
+        // 创建地图实例并设置默认视图
+        var map = new AMap.Map('map-container', {
+            zoom: 5,  // 调整缩放级别，使三个城市都可见
+            center: [113.947158, 28.173459],  // 调整中心点到更合适的位置
+            mapStyle: 'amap://styles/normal',  // 使用标准地图样式
+            viewMode: '3D',  // 使用3D视图
+            pitch: 0,  // 俯仰角度
+            features: ['bg', 'road', 'building', 'point'],  // 显示背景、道路、建筑物、标注
+            layers: [
+                new AMap.TileLayer(),
+                new AMap.TileLayer.Satellite(),
+                new AMap.Buildings({
+                    zooms: [12, 20],
+                    zIndex: 10,
+                    heightFactor: 2
+                })
+            ]
+        });
+
+        // 创建自定义图标样式
+        var iconStyle = {
+            size: new AMap.Size(40, 40),  // 图标大小
+            image: 'assets/images/学屿logo.jpg',  // 图标地址
+            imageSize: new AMap.Size(40, 40),  // 图标尺寸
+            imageOffset: new AMap.Pixel(0, 0)  // 图标偏移
+        };
+
+        // 添加图层切换控件
+        map.plugin(['AMap.MapType'], function() {
+            map.addControl(new AMap.MapType({
+                defaultType: 0,
+                showRoad: true
+            }));
+        });
+
+        // 添加定位插件
+        AMap.plugin('AMap.Geolocation', function() {
+            var geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,
+                timeout: 10000,
+                buttonPosition: 'RB',
+                buttonOffset: new AMap.Pixel(10, 20),
+                zoomToAccuracy: true
+            });
+            map.addControl(geolocation);
+        });
+
+        // 定义办公地址坐标
+        var locations = [
+            {
+                position: [121.436404, 31.189133],
+                title: '上海办公室',
+                address: '上海市徐汇区徐家汇中心3期A栋'
+            },
+            {
+                position: [113.547071, 22.111478],
+                title: '珠海办公室', 
+                address: '珠海市横琴新区环岛东路南方三一总部大厦18楼'
+            },
+            {
+                position: [106.578421, 29.552743],
+                title: '重庆办公室',
+                address: '重庆市渝中区民族路188号华润广场B座'
+            }
+        ];
+
+        // 为每个位置创建标记和信息窗体
+        locations.forEach(function(location) {
+            var marker = new AMap.Marker({
+                position: location.position,
+                title: location.title,
+                map: map,
+                animation: 'AMAP_ANIMATION_DROP',
+                icon: new AMap.Icon({
+                    size: iconStyle.size,
+                    image: iconStyle.image,
+                    imageSize: iconStyle.imageSize,
+                    imageOffset: iconStyle.imageOffset
+                }),
+                label: {
+                    content: location.title,
+                    direction: 'top'
+                }
+            });
+
+            // 添加自定义样式使图标圆角化
+            marker.setContent('<div class="custom-marker" style="background-image: url(' + iconStyle.image + '); width: 40px; height: 40px; background-size: cover; border-radius: 8px;"></div>');
+
+            var infoWindow = new AMap.InfoWindow({
+                content: `<div style="padding:15px;">
+                            <h4 style="color:#1e88e5;margin-bottom:10px;">${location.title}</h4>
+                            <p style="font-size:14px;color:#666;">${location.address}</p>
+                            <div style="margin-top:10px;">
+                                <a href="https://uri.amap.com/marker?position=${location.position[0]},${location.position[1]}&name=${location.title}" target="_blank" style="color:#1e88e5;text-decoration:none;margin-right:10px;">导航到这里 &raquo;</a>
+                                <a href="tel:+86 19305116770" style="color:#1e88e5;text-decoration:none;">联系我们 &raquo;</a>
+                            </div>
+                         </div>`,
+                offset: new AMap.Pixel(0, -30)
+            });
+
+            marker.on('click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+        });
+
+        // 添加地图控件
+        map.addControl(new AMap.ToolBar({
+            position: 'RB'
+        }));
+        map.addControl(new AMap.Scale());
+        map.addControl(new AMap.HawkEye({
+            opened: true,
+            mapStyle: 'amap://styles/dark'
+        }));
+
+        // 自适应所有标记点
+        map.setFitView();
+    };
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineBlocks = document.querySelectorAll('.timeline-block');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelector('.timeline-content').classList.add('aos-animate');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+    
+    timelineBlocks.forEach(block => {
+        observer.observe(block);
+    });
+});
+</script>
 
 <br>
 <br>
@@ -291,17 +404,11 @@
 						<li><span>Ph:</span>+86 19305116770</li>
 						<li><span>Email:</span>inqury@studylandsedu.com</li>
                         <li><span>微信:</span>studymindedu</li>
-						<li><span>Location:</span> 上海市徐汇区徐家汇中心<br>
-                            珠海市横琴国际商务中心<br>
-                            重庆市渝北区创意公园</li>
+						<li><span>Location:</span> 上海市徐汇区徐家汇中心3期A栋<br>
+                            珠海市横琴新区环岛东路南方三一总部大厦18楼<br>
+                            重庆市渝中区民族路188号华润广场B座</li>
 					</ul>
-					<!-- <ul class="list-inline footer-socials">
-						<li class="list-inline-item">Follow us :</li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="list-inline-item"> <a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-					</ul> -->
+
 				</div>
 			</div>
 
@@ -372,8 +479,6 @@
 <div class="fixed-btm-top">
 	<a href="#top-header" class="js-scroll-trigger scroll-to-top"><i class="fa fa-angle-up"></i></a>
 </div>
-
-
 
 
     <!-- 

@@ -1,7 +1,7 @@
 /*==================
 Author       : Dreambuzz
 Template Name: Maxeo - Digital Marketing Template
-�������أ�http://www.bootstrapmb.com
+أhttp://www.bootstrapmb.com
 Description: Maxeo,marketing,seo,agency,business,company,digital marketing,multipurpose,modern,bootstrap4,service
 Version      : 1.0
 ================================*/
@@ -579,11 +579,41 @@ Header TopBar
  BAnner
 ================*/
 .banner {
-  padding: 140px 0px;
-  background: url("../images/banner/ter.jpg") center center no-repeat;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  height: 89vh; /* 设置为全屏高度 */
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
   position: relative;
   z-index: 1;
+  padding: 250px 0; /* 增加内边距使内容区域更高 */
+  color: #fff;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .bannerlcontact {
@@ -597,18 +627,6 @@ Header TopBar
 .map{
   padding: 140px 100px;
   background: url("../images/map.jpeg") center 
-}
-
-.banner:before {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  background: #00000073;
-  width: 100%;
-  height: 100%;
-  opacity: .6;
-  z-index: -1;
 }
 
 .banner .banner-content h1 {
@@ -3940,26 +3958,8 @@ Recent post widget
 .offer-item img {
   width: 100%;
   height: auto;
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-}
-.prev-arrow {
-  left: 10px;
-}
-
-.next-arrow {
-  right: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .timeline {
@@ -4123,4 +4123,177 @@ dot-diameter: 8px; */
 
 .modal-content .contact-info p span {
   font-weight: bold;
+}
+
+/* Offer Showcase Styles */
+.offer-showcase {
+    overflow: hidden;
+    background: #f9f9f9;
+    padding: 60px 0;
+}
+
+.offer-gallery-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 30px 0;
+}
+
+.offer-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 60s linear infinite;
+    will-change: transform;
+}
+
+.offer-item {
+    flex: 0 0 300px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.offer-item:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.offer-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.offer-item:hover img {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 20));
+    }
+}
+
+.offer-gallery-wrapper:hover .offer-track {
+    animation-play-state: paused;
+}
+
+/* 添加渐变遮罩效果 */
+.offer-gallery-wrapper::before,
+.offer-gallery-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.offer-gallery-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+}
+
+.offer-gallery-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+}
+
+/* 产品体系卡片背景 */
+.bg-study-abroad {
+    background: linear-gradient(45deg, #FF6B6B, #FFE66D);
+}
+
+.bg-international-exam {
+    background: linear-gradient(45deg, #4ECDC4, #556270);
+}
+
+.bg-language-training {
+    background: linear-gradient(45deg, #6C5B7B, #C06C84);
+}
+
+.bg-academic-support {
+    background: linear-gradient(45deg, #45B7D1, #2E8BC0);
+}
+
+.bg-profile-enhancement {
+    background: linear-gradient(45deg, #77A1D3, #79CBCA);
+}
+
+.bg-career-planning {
+    background: linear-gradient(45deg, #FF867C, #FF8E6E);
+}
+
+.bg-visa-accommodation {
+    background: linear-gradient(45deg, #56AB2F, #A8E063);
+}
+
+.bg-overseas-study {
+    background: linear-gradient(45deg, #614385, #516395);
+}
+
+/* 移动端导航菜单样式 */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-toggler .fa-bars {
+    font-size: 24px;
+    color: #333;
+}
+
+.navbar-collapse {
+    display: flex;
+    flex-basis: 100%;
+}
+
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: left;
+        padding: 0 15px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
 }
