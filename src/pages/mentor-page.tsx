@@ -1,0 +1,66 @@
+import { PageHeader } from '@/components/common/page-header';
+import { mentorProfiles } from '@/data/site';
+import { Link } from 'react-router-dom';
+
+export function MentorPage() {
+  return (
+    <>
+      <PageHeader title="导师团队" />
+      <section className="section-gap">
+        <div className="brand-container space-y-10">
+          <div className="rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-100 md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">Our team</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900">我们的团队</h2>
+            <img
+              src="/assets/images/bg/小屿的伙伴们.png"
+              alt="小屿的伙伴们"
+              className="mt-5 w-full rounded-2xl object-cover"
+            />
+            <p className="mt-6 leading-8 text-slate-600">
+              在学屿，有着一群怀揣理想追求生活的学长学姐。我们用心书写每一段海外求学的故事，努力打破求学路上的种种壁垒。无论是异国他乡的文化碰撞，还是学术之路的探索，我们都愿与你一同探讨，共同成长。
+            </p>
+            <p className="mt-3 leading-8 text-slate-600">
+              我们的主导师团队由北美藤校、英国牛剑 G5、欧陆招生官、港三新二等顶尖名校精英组成，跨时区、跨地域提供全程咨询与监督辅导。
+            </p>
+          </div>
+
+          <div>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">Mentor representative</p>
+              <h3 className="mt-3 text-3xl font-semibold text-slate-900">导师代表</h3>
+              <p className="mt-3 text-slate-600">寻找与你志趣相同的学长学姐，作为学科过来人一起走过申请旅程。</p>
+            </div>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {mentorProfiles.map((mentor) => (
+                <article key={mentor.name} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
+                  <img src={mentor.image} alt={mentor.name} className="h-56 w-full rounded-xl object-cover" />
+                  <h4 className="mt-4 text-lg font-semibold text-slate-900">{mentor.name}</h4>
+                  <ul className="mt-3 space-y-1 text-sm leading-7 text-slate-600">
+                    {mentor.highlights.map((text) => (
+                      <li key={text}>• {text}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-3xl bg-slate-900 px-8 py-10 text-center text-white">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-200">be a mentor</p>
+            <h3 className="mt-3 text-3xl font-semibold">想要加入我们吗？</h3>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+              欢迎志同道合、有理想的同学加入学屿导师团队，和我们一起帮助更多学生走向世界名校。
+            </p>
+            <Link
+              to="/contact"
+              className="mt-6 inline-block rounded-full bg-[#20ad96] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1a9b86]"
+            >
+              联系我们
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

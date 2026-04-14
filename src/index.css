@@ -1,0 +1,72 @@
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #20ad96;
+  --brand-ink: #0f766e;
+  --ink: #0f172a;
+  --muted: #475569;
+  --surface: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Geist Variable', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+
+.brand-container {
+  width: min(1200px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section-gap {
+  padding-block: 4.5rem;
+}
+
+.partner-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.partner-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: max-content;
+  animation: partner-scroll 35s linear infinite;
+}
+
+.partner-track.reverse {
+  animation-direction: reverse;
+}
+
+@keyframes partner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-gap {
+    padding-block: 3.25rem;
+  }
+}
