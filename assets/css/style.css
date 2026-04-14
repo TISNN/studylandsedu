@@ -942,6 +942,165 @@ Course category Section
   border-color: transparent;
 }
 
+.product-accordion-section {
+  overflow: hidden;
+}
+
+.product-accordion-layout {
+  row-gap: 40px;
+}
+
+.product-accordion-copy {
+  margin-bottom: 0;
+}
+
+.product-accordion-copy p {
+  max-width: 460px;
+  margin-bottom: 0;
+}
+
+.product-accordion {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 2px;
+  scrollbar-width: none;
+}
+
+.product-accordion::-webkit-scrollbar {
+  display: none;
+}
+
+.product-accordion-item {
+  position: relative;
+  width: 52px;
+  min-width: 52px;
+  height: 440px;
+  border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: #1d292e;
+  transition: width 0.55s ease;
+}
+
+.product-accordion-item.is-active {
+  width: 300px;
+  min-width: 300px;
+}
+
+.product-accordion-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-accordion-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.product-accordion-label {
+  position: absolute;
+  bottom: 108px;
+  left: 50%;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: translateX(-50%) rotate(-90deg);
+  transition: all 0.35s ease;
+  z-index: 2;
+}
+
+.product-accordion-meta {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.35s ease;
+  z-index: 2;
+}
+
+.product-accordion-item.is-active .product-accordion-label {
+  bottom: 52px;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.product-accordion-item.is-active .product-accordion-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-accordion-item:focus-visible {
+  outline: 2px solid #20ad96;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1199px) {
+  .product-accordion-item {
+    height: 400px;
+  }
+
+  .product-accordion-item.is-active {
+    width: 270px;
+    min-width: 270px;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-accordion-copy {
+    text-align: center;
+  }
+
+  .product-accordion-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-accordion {
+    justify-content: flex-start;
+  }
+
+  .product-accordion-item {
+    height: 360px;
+  }
+
+  .product-accordion-item.is-active {
+    width: 240px;
+    min-width: 240px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-accordion-item {
+    width: 44px;
+    min-width: 44px;
+    height: 320px;
+  }
+
+  .product-accordion-item.is-active {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  .product-accordion-label {
+    font-size: 16px;
+  }
+}
+
 /*========================
  Course category style2
 ============================*/
@@ -1808,20 +1967,6 @@ Course Page
 /*==========================
 cONTACT pAGE
 =======================*/
-.contact__form .form-control {
-  height: 55px;
-  border-radius: 46px;
-  padding-left: 20px;
-  border: 2px solid #eee;
-  background: #eee;
-}
-
-.contact__form textarea.form-control {
-  height: auto;
-  border-radius: 15px;
-  padding-top: 15px;
-}
-
 .contact-item {
   margin-bottom: 20px;
   border-bottom: 1px solid #eee;
@@ -1835,6 +1980,65 @@ cONTACT pAGE
 
 .contact-item p {
   margin-bottom: 7px;
+}
+
+.contact-essentials {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.contact-qrcode-wrap {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.contact-qrcode {
+  border-radius: 0;
+}
+
+.contact-info-row .contact-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  border: 1px solid #e7f3f1;
+  border-radius: 16px;
+  padding: 26px 28px;
+  min-height: 100%;
+}
+
+.contact-info-row .contact-item p {
+  color: #20ad96;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+}
+
+.contact-info-row .contact-item h4 {
+  margin-bottom: 0;
+  line-height: 1.75;
+  font-size: 19px;
+}
+
+.contact-address {
+  word-break: break-word;
+}
+
+@media (max-width: 991px) {
+  .contact-qrcode-wrap {
+    margin-bottom: 28px;
+  }
+
+  .contact-info-row .col-lg-6 + .col-lg-6 {
+    margin-top: 18px;
+  }
+
+  .contact-info-row .contact-item {
+    padding: 22px 20px;
+  }
+
+  .contact-info-row .contact-item h4 {
+    font-size: 18px;
+    line-height: 1.7;
+  }
 }
 
 #map {
@@ -4142,83 +4346,175 @@ dot-diameter: 8px; */
   font-weight: bold;
 }
 
-/* Offer Showcase Styles */
+/* Offer Morph Showcase */
 .offer-showcase {
-    overflow: hidden;
-    background: #f9f9f9;
-    padding: 60px 0;
+  overflow: hidden;
+  background: #f7fbfa;
 }
 
-.offer-gallery-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin: 30px 0;
+.offer-morph-stage {
+  position: relative;
+  height: 760px;
+  border: 1px solid #dcece7;
+  border-radius: 24px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  background: radial-gradient(120% 100% at 50% -10%, rgba(32, 173, 150, 0.12), rgba(255, 255, 255, 0) 56%), #fbfffe;
 }
 
-.offer-track {
-    display: flex;
-    gap: 20px;
-    animation: scroll 60s linear infinite;
-    will-change: transform;
+.offer-morph-canvas {
+  position: absolute;
+  inset: 0;
 }
 
-.offer-item {
-    flex: 0 0 300px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.offer-morph-intro,
+.offer-morph-copy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-.offer-item:hover {
-    transform: scale(1.05);
-    z-index: 1;
+.offer-morph-intro {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
 }
 
-.offer-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.offer-morph-intro h4,
+.offer-morph-copy h4 {
+  font-size: 38px;
+  margin-bottom: 8px;
+  color: #1d292e;
 }
 
-.offer-item:hover img {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.offer-morph-intro p,
+.offer-morph-copy p {
+  margin-bottom: 0;
+  color: #5a6473;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-300px * 20));
-    }
+.offer-morph-copy {
+  top: 11%;
+  opacity: 0;
 }
 
-.offer-gallery-wrapper:hover .offer-track {
-    animation-play-state: paused;
+.offer-morph-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 74px;
+  height: 104px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  opacity: 0;
+  z-index: 2;
 }
 
-/* 添加渐变遮罩效果 */
-.offer-gallery-wrapper::before,
-.offer-gallery-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
+.offer-morph-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.offer-gallery-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+.offer-morph-card:hover .offer-morph-card-inner {
+  transform: rotateY(180deg);
 }
 
-.offer-gallery-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+.offer-morph-card-front,
+.offer-morph-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.offer-morph-card-front {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background: #eef3f5;
+}
+
+.offer-morph-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.offer-morph-card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 24, 30, 0.35), rgba(13, 24, 30, 0.06));
+}
+
+.offer-morph-card-back {
+  transform: rotateY(180deg);
+  background: #1d292e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 3px;
+}
+
+.offer-morph-card-back span {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #20ad96;
+}
+
+.offer-morph-card-back strong {
+  font-size: 11px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .offer-morph-stage {
+    height: 620px;
+    border-radius: 18px;
+  }
+
+  .offer-morph-intro h4,
+  .offer-morph-copy h4 {
+    font-size: 28px;
+  }
+
+  .offer-morph-card {
+    width: 64px;
+    height: 92px;
+  }
+}
+
+@media (max-width: 575px) {
+  .offer-morph-stage {
+    height: 560px;
+  }
+
+  .offer-morph-intro p,
+  .offer-morph-copy p {
+    font-size: 10px;
+  }
+
+  .offer-morph-card {
+    width: 56px;
+    height: 82px;
+  }
 }
 
 /* 产品体系卡片背景 */
