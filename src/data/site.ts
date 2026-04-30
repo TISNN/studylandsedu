@@ -509,8 +509,8 @@ export const mentorProfiles: MentorProfile[] = [
     name: 'Evan',
     image: '/assets/images/team/evan.png',
     highlights: [
-      '阿姆斯特丹大学 计算机 博士硕士',
-      '澳门科技大学 计算机 学士',
+      '阿姆斯特丹大学 人工智能 全奖博士',
+      '阿姆斯特丹大学 计算机科学 硕士',
       '荷兰理学院 招生官',
       '中港澳教育文化交流协会 副会长',
     ],
