@@ -3,6 +3,21 @@ export type NavItem = {
   path: string;
 };
 
+export type HeroCloudPhrase = {
+  text: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  tone?: 'muted' | 'soft' | 'main';
+  weight?: 'normal' | 'strong';
+  delayMs?: number;
+  durationMs?: number;
+};
+
+export type HeroCloudRow = {
+  left?: HeroCloudPhrase;
+  center?: HeroCloudPhrase;
+  right?: HeroCloudPhrase;
+};
+
 export type ProductItem = {
   title: string;
   meta: string;
@@ -50,8 +65,211 @@ export type MentorProfile = {
 export const navItems: NavItem[] = [
   { label: '主页', path: '/' },
   { label: '关于学屿', path: '/about' },
-  { label: '导师团队', path: '/mentor' },
+  { label: '学屿团队', path: '/mentor' },
   { label: '联系我们', path: '/contact' },
+];
+
+export const heroCloudRows: HeroCloudRow[] = [
+  {
+    left: {
+      text: '我们相信谦卑，相信持续的学习和进化。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 180,
+    },
+    center: {
+      text: '我们相信申请不是模板填空，而是长期叙事。',
+      size: 'sm',
+      tone: 'soft',
+      weight: 'strong',
+      delayMs: 360,
+    },
+    right: {
+      text: '我们相信更早的规划，会让选择更从容。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 560,
+    },
+  },
+  {
+    left: {
+      text: '我们相信选校不该只看榜单。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 740,
+    },
+    center: {
+      text: '我们相信名校申请不是追逐光环，而是对未来方向的认真回答。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 920,
+    },
+    right: {
+      text: '我们相信好的教育陪伴，会让学生更清楚自己是谁。',
+      size: 'sm',
+      tone: 'soft',
+      weight: 'strong',
+      delayMs: 1100,
+    },
+  },
+  {
+    left: {
+      text: '我们相信努力和判断要一起进化。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 1260,
+    },
+    center: {
+      text: '我们相信背景提升、课程规划、实习和研究，应当从同一目标出发。',
+      size: 'sm',
+      tone: 'soft',
+      weight: 'strong',
+      delayMs: 1380,
+    },
+    right: {
+      text: '我们相信真正的准备感，来自长期积累。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 1520,
+    },
+  },
+  {
+    left: {
+      text: '我们相信每个学生都值得一套真正个性化的路径。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 1640,
+    },
+    right: {
+      text: '我们相信文书、选校、面试和执行，必须连成一条线。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 1760,
+    },
+  },
+  {
+    left: {
+      text: '我们相信好的文书要说真话。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 1920,
+      durationMs: 1200,
+    },
+    center: {
+      text: '我们相信，一个好的申请团队应该坚定地和学生站在一起，提供快速反馈、清晰判断和长期陪伴。',
+      size: 'sm',
+      tone: 'main',
+      delayMs: 2040,
+      durationMs: 1200,
+    },
+    right: {
+      text: '我们相信沟通要坦诚，节奏要清晰。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 2160,
+      durationMs: 1200,
+    },
+  },
+  {
+    center: {
+      text: '应该帮忙不添乱，提供方法而不是模板，提供判断而不是空泛安慰。',
+      size: 'sm',
+      tone: 'main',
+      delayMs: 2480,
+      durationMs: 1200,
+    },
+  },
+  {
+    left: {
+      text: '我们相信透明协作，比神秘包装更能建立信任。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 2860,
+      durationMs: 1200,
+    },
+    center: {
+      text: '我们相信长期主义不是慢吞吞，而是每一步都朝正确方向积累。',
+      size: 'xs',
+      tone: 'soft',
+      delayMs: 3020,
+      durationMs: 1200,
+    },
+    right: {
+      text: '我们相信录取只是开始，成长路径更重要。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 3180,
+      durationMs: 1200,
+    },
+  },
+  {
+    left: {
+      text: '我们相信预测未来最好的方式，是今天就认真准备。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 3380,
+      durationMs: 1300,
+    },
+    right: {
+      text: '我们相信结果重要，但成长路径同样重要。',
+      size: 'sm',
+      tone: 'main',
+      weight: 'strong',
+      delayMs: 3560,
+      durationMs: 1300,
+    },
+  },
+  {
+    left: {
+      text: '我们相信能力的积累，不该被切成彼此无关的任务。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 3800,
+      durationMs: 1300,
+    },
+    center: {
+      text: '我们相信好的导师不是替你发声，而是帮你找到自己的表达。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 3980,
+      durationMs: 1300,
+    },
+    right: {
+      text: '我们相信专业定位，比盲目冲排名更重要。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 4160,
+      durationMs: 1300,
+    },
+  },
+  {
+    left: {
+      text: '我们相信诚实比漂亮更有力量。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 4320,
+      durationMs: 1300,
+    },
+    center: {
+      text: '我们相信重要的决定，值得慢下来想清楚。',
+      size: 'xs',
+      tone: 'soft',
+      delayMs: 4480,
+      durationMs: 1300,
+    },
+    right: {
+      text: '我们相信每一次准备，都应该通向更大的自信。',
+      size: 'xs',
+      tone: 'muted',
+      delayMs: 4640,
+      durationMs: 1300,
+    },
+  },
 ];
 
 export const productItems: ProductItem[] = [
@@ -237,7 +455,12 @@ export const mentorHighlights: MentorHighlight[] = [
   {
     name: 'Evan Xu',
     title: '想要讲好留学故事的非知名学者',
-    bullets: ['阿姆斯特丹大学 人工智能 全奖博士', '荷兰理学院 招生官', '中港澳教育文化交流协会 副会长'],
+    bullets: [
+      '阿姆斯特丹大学 人工智能 全奖博士',
+      '荷兰理学院 招生官',
+      '澳门高校青年学联 理事长',
+      '中港澳教育文化交流协会 副会长',
+    ],
     image: '/assets/images/clients/SCR-20240816-rpoi.jpeg',
   },
   {
@@ -249,7 +472,7 @@ export const mentorHighlights: MentorHighlight[] = [
   {
     name: 'Kayn Xu',
     title: '伦敦第一“申请”',
-    bullets: ['伦敦大学学院 UCL 数学 学士', '香港大学本科 全奖 offer', 'AMC12 全球前 1% ｜ A-LEVEL 5A*'],
+    bullets: ['伦敦大学学院UCL 数学 学士', '香港大学本科 全奖offer', 'AMC12 全球前1% ｜ A-LEVEL 5A*'],
     image: '/assets/images/clients/founder3.jpg',
   },
 ];

@@ -18,6 +18,27 @@ npm run build
 npm run preview
 ```
 
+`npm run preview` 会读取构建后的 `dist/`，这是本地检查线上效果的正确方式。
+
+## 部署说明
+
+- 这个仓库根目录的 [index.html](/Users/evanxu/Desktop/xueyu.github.io-main/index.html) 是 Vite 开发入口，里面会直接引用 `/src/main.tsx`。
+- 不要把仓库根目录直接当成静态站点发布，否则服务器会原样返回 `.tsx`，浏览器就会报 `Expected a JavaScript-or-Wasm module script` 这类 MIME 错误。
+- 正确做法是先执行 `npm run build`，再发布构建产物 `dist/`。
+- 仓库已补充 GitHub Pages 工作流 [.github/workflows/deploy-pages.yml](/Users/evanxu/Desktop/xueyu.github.io-main/.github/workflows/deploy-pages.yml)，推送到 `main` 或 `master` 时会自动构建并部署 `dist/`。
+- 当前生产站点 `https://www.studylandsedu.com` 实际跑在 Lighthouse `101.43.94.36`，Caddy 已经指向 `/opt/xueyu/dist`。
+- 生产机当前没有可直接使用的 `npm`，所以推荐发布路径是“本地构建 + rsync 上传 dist”。
+
+### Lighthouse 发布
+
+```bash
+npm run deploy:lighthouse
+```
+
+- 这个命令会先本地执行 `npm run build`，再把 `dist/` 同步到 `root@101.43.94.36:/opt/xueyu/dist/`。
+- 发布后脚本会检查首页不再引用 `/src/main.tsx`，并验证主 JS 资源返回的是 JavaScript MIME。
+- 如需覆盖默认配置，可在命令前设置环境变量：`LIGHTHOUSE_HOST`、`LIGHTHOUSE_DIST_DIR`、`SITE_URL`、`SKIP_BUILD=1`。
+
 ## 主要目录结构
 
 ```text

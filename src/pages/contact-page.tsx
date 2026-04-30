@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { PageHeader } from '@/components/common/page-header';
 
 export function ContactPage() {
@@ -17,24 +17,25 @@ export function ContactPage() {
             <img
               src="/assets/images/联系微信.png"
               alt="微信二维码"
-              className="w-[360px] max-w-full rounded-2xl border border-slate-200 bg-white p-3"
+              className="w-full max-w-[560px] rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"
             />
 
-            <div className="grid w-full max-w-6xl gap-5 md:grid-cols-3">
+            <div className="grid w-full max-w-6xl gap-5 md:grid-cols-2">
               <article className="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-100">
                 <div className="inline-flex size-9 items-center justify-center rounded-full bg-[#20ad96]/10 text-[#20ad96]">
                   <Mail size={16} />
                 </div>
-                <p className="mt-4 text-sm text-slate-500">邮箱</p>
-                <h3 className="mt-2 text-lg font-semibold text-slate-900">inqury@studylandsedu.com</h3>
-              </article>
+                <div className="mt-4 space-y-5">
+                  <div>
+                    <p className="text-sm text-slate-500">邮箱</p>
+                    <h3 className="mt-2 text-lg font-semibold text-slate-900">inqury@studylandsedu.com</h3>
+                  </div>
 
-              <article className="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-100">
-                <div className="inline-flex size-9 items-center justify-center rounded-full bg-[#20ad96]/10 text-[#20ad96]">
-                  <MessageCircle size={16} />
+                  <div>
+                    <p className="text-sm text-slate-500">微信</p>
+                    <h3 className="mt-2 text-lg font-semibold text-slate-900">studymindedu</h3>
+                  </div>
                 </div>
-                <p className="mt-4 text-sm text-slate-500">微信</p>
-                <h3 className="mt-2 text-lg font-semibold text-slate-900">studymindedu</h3>
               </article>
 
               <article className="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-100">

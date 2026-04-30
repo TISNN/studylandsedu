@@ -1,12 +1,21 @@
-import { Menu, X } from 'lucide-react';
+import { House, Info, Mail, Menu, Users, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navItems } from '@/data/site';
 
-function navClass(isActive: boolean): string {
+const navIcons = [House, Info, Users, Mail];
+
+function desktopNavClass(isActive: boolean): string {
   return [
-    'text-sm md:text-base transition-colors',
-    isActive ? 'text-[#20ad96] font-semibold' : 'text-slate-700 hover:text-[#20ad96]',
+    'site-sidebar__link',
+    isActive ? 'is-active' : '',
+  ].join(' ');
+}
+
+function mobileNavClass(isActive: boolean): string {
+  return [
+    'text-sm transition-colors',
+    isActive ? 'text-[#0f766e] font-semibold' : 'text-slate-700 hover:text-[#0f766e]',
   ].join(' ');
 }
 
@@ -14,50 +23,65 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="brand-container flex h-20 items-center justify-between gap-4">
-        <NavLink to="/" className="shrink-0" onClick={() => setIsOpen(false)}>
-          <img
-            src="/assets/images/banner/logo double.png"
-            alt="学屿教育"
-            className="h-10 w-auto md:h-12"
-          />
+    <>
+      <aside className="site-sidebar hidden md:flex">
+        <NavLink to="/" className="site-sidebar__brand" onClick={() => setIsOpen(false)}>
+          <div className="site-sidebar__brand-lockup">
+            <span className="site-sidebar__brand-wordmark">StudyLands</span>
+          </div>
+          <span className="site-sidebar__brand-subtitle">学屿教育</span>
         </NavLink>
 
-        <button
-          type="button"
-          className="inline-flex items-center rounded-md p-2 text-slate-700 md:hidden"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="切换导航"
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-
-        <nav className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === '/'}
-              className={({ isActive }) => navClass(isActive)}
-            >
-              {item.label}
-            </NavLink>
-          ))}
+        <nav className="site-sidebar__nav">
+          {navItems.map((item, index) => {
+            const Icon = navIcons[index] ?? House;
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                end={item.path === '/'}
+                className={({ isActive }) => desktopNavClass(isActive)}
+              >
+                <Icon size={20} strokeWidth={1.8} />
+                <span>{item.label}</span>
+              </NavLink>
+            );
+          })}
         </nav>
 
         <a
           href="https://workspace.studylandsedu.com"
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-full bg-[#20ad96] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1a9b86] md:inline-block"
+          className="site-sidebar__login"
         >
           登录
         </a>
-      </div>
+      </aside>
+
+      <header className="site-mobile-header md:hidden">
+        <div className="brand-container flex h-16 items-center justify-between gap-4">
+          <NavLink to="/" className="shrink-0" onClick={() => setIsOpen(false)}>
+            <img
+              src="/assets/images/banner/logo double.png"
+              alt="学屿教育"
+              className="h-9 w-auto"
+            />
+          </NavLink>
+
+          <button
+            type="button"
+            className="inline-flex items-center rounded-md p-2 text-slate-700"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="切换导航"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </header>
 
       {isOpen ? (
-        <div className="border-t border-slate-100 bg-white md:hidden">
+        <div className="border-b border-slate-200 bg-white md:hidden">
           <nav className="brand-container flex flex-col gap-3 py-4">
             {navItems.map((item) => (
               <NavLink
@@ -65,7 +89,7 @@ export function SiteHeader() {
                 to={item.path}
                 end={item.path === '/'}
                 onClick={() => setIsOpen(false)}
-                className={({ isActive }) => navClass(isActive)}
+                className={({ isActive }) => mobileNavClass(isActive)}
               >
                 {item.label}
               </NavLink>
@@ -74,13 +98,13 @@ export function SiteHeader() {
               href="https://workspace.studylandsedu.com"
               target="_blank"
               rel="noreferrer"
-              className="mt-1 inline-flex w-fit rounded-full bg-[#20ad96] px-5 py-2 text-sm font-semibold text-white"
+              className="mt-1 inline-flex w-fit rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-[#0f766e]"
             >
               登录
             </a>
           </nav>
         </div>
       ) : null}
-    </header>
+    </>
   );
 }

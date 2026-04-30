@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { mentorHighlights } from '@/data/site';
 
 export function MentorTeaserSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section className="section-gap">
       <div className="brand-container">
@@ -17,19 +20,55 @@ export function MentorTeaserSection() {
             </Link>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {mentorHighlights.map((mentor) => (
-              <article key={mentor.name} className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
-                <img src={mentor.image} alt={mentor.name} className="h-48 w-full rounded-xl object-cover" />
-                <h3 className="mt-4 text-base font-semibold text-slate-900">{mentor.name}</h3>
-                <p className="mt-1 text-sm font-medium text-slate-700">{mentor.title}</p>
-                <ul className="mt-3 space-y-2 text-xs leading-6 text-slate-600">
-                  {mentor.bullets.map((bullet) => (
-                    <li key={bullet}>• {bullet}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+          <div className="mentor-slider">
+            <div className="mentor-slider__viewport">
+              <div
+                className="mentor-slider__track"
+                style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}
+              >
+                {mentorHighlights.map((mentor) => (
+                  <article key={mentor.name} className="testimonial-item testimonial-style-2 mentor-slider__slide">
+                    <i aria-hidden="true">❞</i>
+
+                    <div className="testimonial-info-title">
+                      <h3>{mentor.title}</h3>
+                    </div>
+
+                    <div className="testimonial-info-desc">
+                      学屿教育 创始人
+                      <br />
+                      {mentor.bullets.map((bullet, index) => (
+                        <span key={bullet}>
+                          {bullet}
+                          {index < mentor.bullets.length - 1 ? <br /> : null}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="client-info">
+                      <div className="client-img">
+                        <img src={mentor.image} alt={mentor.name} />
+                      </div>
+                      <div className="testionial-author">{mentor.name}</div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="mentor-slider__dots" role="tablist" aria-label="导师轮播">
+              {mentorHighlights.map((mentor, index) => (
+                <button
+                  key={mentor.name}
+                  type="button"
+                  className={['mentor-slider__dot', index === activeIndex ? 'is-active' : ''].join(' ')}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`查看导师 ${mentor.name}`}
+                  aria-selected={index === activeIndex}
+                  role="tab"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ export function MentorPage() {
       <PageHeader title="导师团队" />
       <section className="section-gap">
         <div className="brand-container space-y-10">
-          <div className="rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-100 md:p-10">
+          <div className="space-y-5">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">Our team</p>
             <h2 className="mt-3 text-3xl font-semibold text-slate-900">我们的团队</h2>
             <img
@@ -48,7 +48,7 @@ export function MentorPage() {
 
           <div className="rounded-3xl bg-slate-900 px-8 py-10 text-center text-white">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-200">be a mentor</p>
-            <h3 className="mt-3 text-3xl font-semibold">想要加入我们吗？</h3>
+            <h3 className="mt-3 text-3xl font-semibold text-white">想要加入我们吗？</h3>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-300">
               欢迎志同道合、有理想的同学加入学屿导师团队，和我们一起帮助更多学生走向世界名校。
             </p>

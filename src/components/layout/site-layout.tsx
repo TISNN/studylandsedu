@@ -4,12 +4,14 @@ import { SiteHeader } from '@/components/layout/site-header';
 
 export function SiteLayout() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="site-shell min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <div className="site-shell__content">
+        <main>
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </div>
   );
 }
