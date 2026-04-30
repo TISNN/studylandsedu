@@ -1,10 +1,8 @@
 import { Mail, MapPin } from 'lucide-react';
-import { PageHeader } from '@/components/common/page-header';
 
 export function ContactPage() {
   return (
     <>
-      <PageHeader title="联系我们" />
       <section className="section-gap">
         <div className="brand-container">
           <div className="text-center">
@@ -17,7 +15,7 @@ export function ContactPage() {
             <img
               src="/assets/images/联系微信.png"
               alt="微信二维码"
-              className="w-full max-w-[560px] rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"
+              className="w-full max-w-6xl rounded-2xl shadow-sm"
             />
 
             <div className="grid w-full max-w-6xl gap-5 md:grid-cols-2">

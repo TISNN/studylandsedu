@@ -1,11 +1,9 @@
-import { PageHeader } from '@/components/common/page-header';
 import { mentorProfiles } from '@/data/site';
 import { Link } from 'react-router-dom';
 
 export function MentorPage() {
   return (
     <>
-      <PageHeader title="导师团队" />
       <section className="section-gap">
         <div className="brand-container space-y-10">
           <div className="space-y-5">

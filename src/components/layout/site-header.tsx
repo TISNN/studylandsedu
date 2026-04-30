@@ -1,9 +1,9 @@
-import { House, Info, Mail, Menu, Users, X } from 'lucide-react';
+import { ClipboardList, House, Info, Mail, Menu, Users, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navItems } from '@/data/site';
 
-const navIcons = [House, Info, Users, Mail];
+const navIcons = [House, Info, ClipboardList, Users, Mail];
 
 function desktopNavClass(isActive: boolean): string {
   return [

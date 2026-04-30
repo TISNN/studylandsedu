@@ -64,6 +64,129 @@ h6 {
   padding-block: 4.5rem;
 }
 
+.strengths-primary-cta {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--brand);
+  padding: 0.86rem 1.35rem;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.strengths-primary-cta:hover {
+  background: #1a9b86;
+  transform: translateY(-1px);
+}
+
+.strengths-feature-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #121212;
+  color: #fff;
+}
+
+.strengths-feature-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s ease;
+}
+
+.strengths-feature-card:hover .strengths-feature-image {
+  transform: scale(1.05);
+}
+
+.strengths-feature-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.36);
+}
+
+.strengths-feature-top {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: #fff;
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.35));
+}
+
+.strengths-feature-top p {
+  margin: 0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.strengths-feature-scrim {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 58%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0));
+}
+
+.strengths-feature-title {
+  position: absolute;
+  top: auto;
+  left: 48px;
+  right: 48px;
+  bottom: 48px;
+  z-index: 20;
+  max-width: 760px;
+  margin: 0;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+@media (max-width: 767px) {
+  .strengths-feature-card {
+    min-height: 420px;
+  }
+
+  .strengths-feature-top {
+    top: 32px;
+    left: 32px;
+    right: 32px;
+  }
+
+  .strengths-feature-title {
+    left: 32px;
+    right: 32px;
+    bottom: 32px;
+    font-size: 38px;
+  }
+}
+
 .site-shell__content {
   min-height: 100vh;
 }

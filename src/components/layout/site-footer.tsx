@@ -183,9 +183,8 @@ export function SiteFooter() {
               </button>
 
               {wechatOpen ? (
-                <div className="absolute right-1/2 top-full z-10 mt-3 w-40 translate-x-1/2 rounded-2xl border border-[oklch(0.86_0.01_245)] bg-[oklch(0.99_0.003_245)] p-3 shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
-                  <img src="/assets/images/联系微信.png" alt="微信二维码" className="h-auto w-full rounded-xl" />
-                  <p className="mt-2 text-center text-[11px] font-medium tracking-[0.08em] text-[oklch(0.36_0.03_250)]">微信咨询</p>
+                <div className="absolute right-1/2 bottom-full z-10 mb-3 w-40 translate-x-1/2 rounded-2xl border border-[oklch(0.86_0.01_245)] bg-[oklch(0.99_0.003_245)] p-3 shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
+                  <img src="/assets/images/qrcode_for_gh.jpg" alt="微信二维码" className="h-auto w-full rounded-xl" />
                 </div>
               ) : null}
             </div>

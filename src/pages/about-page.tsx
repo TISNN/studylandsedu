@@ -11,7 +11,6 @@ import {
   Sparkles,
   Users,
 } from 'lucide-react';
-import { PageHeader } from '@/components/common/page-header';
 
 type EcosystemItem = {
   title: string;
@@ -98,8 +97,6 @@ const journeyItems = [
 export function AboutPage() {
   return (
     <>
-      <PageHeader title="关于学屿" />
-
       <section className="section-gap">
         <div className="brand-container">
           <div className="max-w-3xl">
@@ -157,8 +154,8 @@ export function AboutPage() {
       </section>
 
       <section className="section-gap">
-        <div className="brand-container grid gap-6 lg:grid-cols-[1fr_1.08fr]">
-          <article className="rounded-3xl bg-white p-8 ring-1 ring-slate-100">
+        <div className="brand-container">
+          <article className="max-w-3xl rounded-3xl bg-white p-8 ring-1 ring-slate-100">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">品牌理念</p>
             <h3 className="mt-3 text-3xl font-semibold text-slate-900">我们的理念</h3>
             <p className="mt-5 leading-8 text-slate-600">
@@ -167,37 +164,9 @@ export function AboutPage() {
             <div className="mt-6 space-y-4 border-t border-slate-200 pt-5">
               <p className="text-sm leading-7 text-slate-600">先理解学生，再给出路径，而不是先给答案。</p>
               <p className="text-sm leading-7 text-slate-600">让申请、成长、社交和职业认知放在同一条线上看。</p>
+              <p className="text-sm leading-7 text-slate-600">相比把服务讲得很满，我们更希望先把人和目标理解清楚，再决定怎样往前走。</p>
             </div>
           </article>
-
-          <div className="grid gap-6">
-            <article className="rounded-3xl bg-white p-8 ring-1 ring-slate-100">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">申请方式</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-900">申请支持</h3>
-              <p className="mt-4 leading-8 text-slate-600">
-                我们采用“选校顾问 + 专业导师 + 申请导师”三对一全程服务，覆盖选校定校、文书撰写、网申递交、签证办理、入学指导与职业规划等关键流程。
-              </p>
-              <img src="/assets/images/bg/专业导师.png" alt="专业导师" className="mt-6 h-[240px] w-full rounded-2xl object-cover" />
-            </article>
-
-            <div className="grid gap-6 sm:grid-cols-2">
-              <article className="rounded-3xl bg-slate-900 p-8 text-white">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-200">价格透明</p>
-                <h3 className="mt-3 text-2xl font-semibold text-white">价格优势</h3>
-                <p className="mt-4 leading-8 text-slate-300">
-                  学屿坚持价格透明与服务质量并重，减少家庭在价格与质量之间反复权衡的成本。对有实际困难的家庭，我们也会提供一定的支持性服务。
-                </p>
-              </article>
-
-              <article className="rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-100">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">学屿的做法</p>
-                <h3 className="mt-3 text-2xl font-semibold text-slate-900">为什么选择我们</h3>
-                <p className="mt-4 leading-8 text-slate-600">
-                  我们优先为每位学员匹配来自目标院校或目标学科的导师，辅以专业选择指导、跨专业测评、实习与游学资源，形成更完整的成长路径。
-                </p>
-              </article>
-            </div>
-          </div>
         </div>
       </section>
 

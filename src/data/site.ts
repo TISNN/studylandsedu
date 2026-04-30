@@ -65,6 +65,7 @@ export type MentorProfile = {
 export const navItems: NavItem[] = [
   { label: '主页', path: '/' },
   { label: '关于学屿', path: '/about' },
+  { label: '申请服务', path: '/service' },
   { label: '学屿团队', path: '/mentor' },
   { label: '联系我们', path: '/contact' },
 ];
@@ -397,7 +398,7 @@ export const strengths: StrengthItem[] = [
   {
     title: '非申请季专属规划',
     description:
-      '在非申请季提前明确院校与专业目标，制定个性化背景提升计划，为申请季形成更稳的竞争优势。',
+      '提前明确院校与专业目标，制定个性化背景提升计划，为申请季形成更稳的竞争优势。',
   },
   {
     title: '定制化文书',
@@ -518,7 +519,7 @@ export const mentorProfiles: MentorProfile[] = [
   {
     name: 'Zoe',
     image: '/assets/images/team/zoe.png',
-    highlights: ['ESCP 欧洲高等商学院 市场与管理 硕士&学士', 'SAI（法国商学院联盟）招生官'],
+    highlights: ['ESCP 欧洲高等商学院 市场与管理 硕士', 'ESCP 欧洲高等商学院 市场与管理 学士', 'SAI（法国商学院联盟）招生官'],
   },
   {
     name: 'Xavier',
@@ -578,7 +579,7 @@ export const mentorProfiles: MentorProfile[] = [
   {
     name: 'Pansy',
     image: '/assets/images/team/Pansy.png',
-    highlights: ['帝国理工学院 数学与统计金融 学士&硕士', '上海某知名国际高中老师'],
+    highlights: ['帝国理工学院 数学与统计金融 学士', '帝国理工学院 数学与统计金融 硕士', '上海某知名国际高中老师'],
   },
   {
     name: 'Kayn',
