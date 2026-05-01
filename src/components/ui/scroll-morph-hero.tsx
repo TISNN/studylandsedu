@@ -118,7 +118,7 @@ function FlipCard({ src, index, target, reducedMotion, onViewDetails }: FlipCard
 
         <button
           type="button"
-          className="pointer-events-none absolute inset-0 flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-xl border border-gray-700 bg-gray-900 p-4 text-center transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#18b7a0] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 group-hover:pointer-events-auto"
+          className="absolute inset-0 flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl border border-gray-700 bg-gray-900 p-4 text-center transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#18b7a0] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
           onClick={(event) => {
             event.stopPropagation();

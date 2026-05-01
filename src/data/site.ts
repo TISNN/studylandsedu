@@ -603,6 +603,7 @@ export const partnerUniversityLogos = [
   '/assets/images/partners/university/Hong_Kong_University_of_Science_and_Technology-Logo.wine.svg',
   '/assets/images/partners/university/University_of_Hong_Kong-Logo.wine.svg',
   '/assets/images/partners/university/Chinese_University_of_Hong_Kong-Logo.wine.svg',
+  '/assets/images/partners/university/university of malaya.png',
   '/assets/images/partners/university/psb.png',
   '/assets/images/partners/university/melbourne.png',
 ];
