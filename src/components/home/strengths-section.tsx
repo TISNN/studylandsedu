@@ -52,7 +52,7 @@ export function StrengthsSection() {
           {/* Card 2: Mentor Image (Color + Overlay) (2x2) */}
           <article className="strengths-feature-card group md:col-span-2 xl:row-span-2">
             <img
-              src="/assets/images/product-accordion/study-abroad.jpg"
+              src="/assets/images/product-accordion/study-abroad.jpg?v=2"
               alt="学屿教育申请陪伴"
               className="strengths-feature-image"
             />

@@ -277,7 +277,7 @@ export const productItems: ProductItem[] = [
   {
     title: '留学申请',
     meta: '本科 · 硕士 · 博士',
-    image: '/assets/images/product-accordion/study-abroad.jpg',
+    image: '/assets/images/product-accordion/study-abroad.jpg?v=2',
   },
   {
     title: '国际标化',
