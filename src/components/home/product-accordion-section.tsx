@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { productItems } from '@/data/site';
 
 export function ProductAccordionSection() {
-  const [activeIndex, setActiveIndex] = useState(productItems.length - 1);
+  const primaryProduct = productItems[0];
 
   return (
     <section id="service-matrix" className="section-gap product-accordion-section">
@@ -16,27 +15,15 @@ export function ProductAccordionSection() {
             </p>
           </div>
 
-          <div className="product-accordion" data-product-accordion>
-            {productItems.map((item, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <button
-                  key={item.title}
-                  type="button"
-                  onMouseEnter={() => setActiveIndex(index)}
-                  onFocus={() => setActiveIndex(index)}
-                  onClick={() => setActiveIndex(index)}
-                  aria-label={item.title}
-                  className={['product-accordion-item', isActive ? 'is-active' : ''].join(' ')}
-                >
-                  <img className="product-accordion-image" src={item.image} alt={item.title} />
-                  <span className="product-accordion-overlay" />
-                  <span className="product-accordion-label">{item.title}</span>
-                  <span className="product-accordion-meta">{item.meta}</span>
-                </button>
-              );
-            })}
-          </div>
+          <article className="product-banner" aria-label={primaryProduct.title}>
+            <img className="product-banner__image" src={primaryProduct.image} alt={primaryProduct.title} />
+            <span className="product-banner__overlay" />
+            <div className="product-banner__content">
+              <p className="product-banner__eyebrow">核心服务</p>
+              <h3 className="product-banner__title">{primaryProduct.title}</h3>
+              <p className="product-banner__meta">{primaryProduct.meta}</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
