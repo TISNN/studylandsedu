@@ -1,28 +1,29 @@
-import { mentorProfiles } from '@/data/site';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom"
+
+import { MentorHero } from "@/components/mentor/mentor-hero"
+import { mentorProfiles } from "@/data/site"
 
 export function MentorPage() {
   return (
     <>
-      <section className="section-gap">
-        <div className="brand-container space-y-10">
-          <div className="space-y-5">
+      <MentorHero />
+
+      <section className="section-gap pt-10">
+        <div className="brand-container space-y-14">
+          <div className="w-full">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">Our team</p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900">我们的团队</h2>
-            <img
-              src="/assets/images/bg/小屿的伙伴们.png"
-              alt="小屿的伙伴们"
-              className="mt-5 w-full rounded-2xl object-cover"
-            />
-            <p className="mt-6 leading-8 text-slate-600">
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-[2.8rem]">
+              学屿团队
+            </h2>
+            <p className="mt-6 max-w-none leading-8 text-slate-600">
               在学屿，有着一群怀揣理想追求生活的学长学姐。我们用心书写每一段海外求学的故事，努力打破求学路上的种种壁垒。无论是异国他乡的文化碰撞，还是学术之路的探索，我们都愿与你一同探讨，共同成长。
             </p>
-            <p className="mt-3 leading-8 text-slate-600">
+            <p className="mt-4 max-w-none leading-8 text-slate-600">
               我们的主导师团队由北美藤校、英国牛剑 G5、欧陆招生官、港三新二等顶尖名校精英组成，跨时区、跨地域提供全程咨询与监督辅导。
             </p>
           </div>
 
-          <div>
+          <div id="mentor-grid">
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#20ad96]">Mentor representative</p>
               <h3 className="mt-3 text-3xl font-semibold text-slate-900">导师代表</h3>
@@ -60,5 +61,5 @@ export function MentorPage() {
         </div>
       </section>
     </>
-  );
+  )
 }
