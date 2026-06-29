@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-REMOTE_HOST="${LIGHTHOUSE_HOST:-root@101.43.94.36}"
+REMOTE_HOST="${LIGHTHOUSE_HOST:-root@42.192.108.224}"
 REMOTE_DIST_DIR="${LIGHTHOUSE_DIST_DIR:-/opt/xueyu/dist}"
 SITE_URL="${SITE_URL:-https://www.studylandsedu.com}"
 SKIP_BUILD="${SKIP_BUILD:-0}"
